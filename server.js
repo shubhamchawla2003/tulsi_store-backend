@@ -12,7 +12,7 @@ import fs from 'fs';
 import path from 'path';
 
 dotenv.config();
-connectDB();
+await connectDB();
 
 // Ensure uploads directory exists for multer
 const uploadsDir = path.resolve('./uploads');
@@ -37,4 +37,6 @@ app.use(notFound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`��� Server running on port ${PORT}`));
+//app.listen(PORT, () => console.log(`��� Server running on port ${PORT}`));
+
+export default app;
